@@ -1,5 +1,4 @@
 .aws/*
-.ssh/*
 .kube/*
 .docker/*
 .env
