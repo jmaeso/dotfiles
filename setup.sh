@@ -8,7 +8,6 @@ ln -s ~/Code/dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/Code/dotfiles/.aws ~/.aws
 ln -s ~/Code/dotfiles/.docker ~/.docker
 ln -s ~/Code/dotfiles/.kube ~/.kube
-ln -s ~/Code/dotfiles/.ssh ~/.ssh
 
 # vim config
 ln -s ~/Code/dotfiles/vim/.vimrc ~/.vimrc
