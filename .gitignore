@@ -3,3 +3,4 @@
 .kube/*
 .docker/*
 .env
+.gitconfig
