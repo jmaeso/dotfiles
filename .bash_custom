@@ -1,0 +1,67 @@
+#Colors
+
+Orange="\[\033[38;5;202m\]"        # Orange
+Green="\[\033[38;5;34m\]"          # Green
+C_green="\[\033[38;5;112m\]"         # Clear Green
+O_green="\[\033[38;5;106m\]"         # Olive Green
+D_green="\[\033[38;5;64m\]"         # Dark Green
+Red="\[\033[38;5;1m\]"           # Red
+C_red="\[\033[38;5;160m\]"           # Clear Red
+D_red="\[\033[38;5;124m\]"           # Dark Red
+Violet="\[\033[38;5;56m\]"           # Violet
+D_blue="\[\033[38;5;26m\]"         # Dark Blue
+C_blue="\[\033[38;5;32m\]"         # Clear Blue
+G_blue="\[\033[38;5;30m\]"         # Greener Blue
+White="\[\033[38;5;15m\]"          # White
+
+PS1="$G_blue\A $D_green\W$White:"
+
+
+# get current branch in git repo
+function parse_git_branch() {
+	BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
+	if [ ! "${BRANCH}" == "" ]
+	then
+		STAT=`parse_git_dirty`
+		echo "${BRANCH}${STAT}"
+	else
+		echo ""
+	fi
+}
+
+# get current status of git repo
+function parse_git_dirty {
+	status=`git status 2>&1 | tee`
+	dirty=`echo -n "${status}" 2> /dev/null | grep "modified:" &> /dev/null; echo "$?"`
+	untracked=`echo -n "${status}" 2> /dev/null | grep "Untracked files" &> /dev/null; echo "$?"`
+	ahead=`echo -n "${status}" 2> /dev/null | grep "Your branch is ahead of" &> /dev/null; echo "$?"`
+	newfile=`echo -n "${status}" 2> /dev/null | grep "new file:" &> /dev/null; echo "$?"`
+	renamed=`echo -n "${status}" 2> /dev/null | grep "renamed:" &> /dev/null; echo "$?"`
+	deleted=`echo -n "${status}" 2> /dev/null | grep "deleted:" &> /dev/null; echo "$?"`
+	bits=''
+	if [ "${renamed}" == "0" ]; then
+		bits=">${bits}"
+	fi
+	if [ "${ahead}" == "0" ]; then
+		bits="*${bits}"
+	fi
+	if [ "${newfile}" == "0" ]; then
+		bits="+${bits}"
+	fi
+	if [ "${untracked}" == "0" ]; then
+		bits="?${bits}"
+	fi
+	if [ "${deleted}" == "0" ]; then
+		bits="x${bits}"
+	fi
+	if [ "${dirty}" == "0" ]; then
+		bits="!${bits}"
+	fi
+	if [ ! "${bits}" == "" ]; then
+		echo " ${bits}"
+	else
+		echo ""
+	fi
+}
+
+PS1=$PS1"$D_red\`parse_git_branch\`\[$(tput sgr0)\] 👉  "
