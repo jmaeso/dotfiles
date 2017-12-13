@@ -8,7 +8,7 @@ source ~/.env
 export CLUSTER_ENVIRONMENT=development
 
 # Golang
-export GOPATH=~/go
+export GOPATH=~/Code/go
 PATH=$PATH:$GOPATH/bin
 
 # Autojump
