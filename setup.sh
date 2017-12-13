@@ -8,3 +8,7 @@ ln -s ~/dotfiles/.aws ~/.aws
 ln -s ~/dotfiles/.docker ~/.docker
 ln -s ~/dotfiles/.kube ~/.kube
 ln -s ~/dotfiles/.ssh ~/.ssh
+
+# vim config
+ln -s ~/dotfiles/vim/.vimrc ~/.vimrc
+ln -s ~/dotfiles/vim/colors ~/.vim/colors
