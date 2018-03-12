@@ -9,7 +9,7 @@ export CLUSTER_ENVIRONMENT=development
 
 # Golang
 export GOPATH=~/Code/go
-PATH=$PATH:$GOPATH/bin
+[[ ":$PATH:" =~ ":$GOPATH/bin:" ]] || PATH="$PATH:$GOPATH/bin"
 
 # Autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh ]
