@@ -1,0 +1,24 @@
+[credential]
+	helper = osxkeychain
+[filter "lfs"]
+	smudge = git-lfs smudge %f
+	required = true
+	clean = git-lfs clean %f
+[user]
+	name = jmaeso
+	email = jmaeso@enti.cat
+[push]
+	default = simple
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	su = submodule update
+	sl = stash list
+	sp = stash pop
+	last = log -1
+	l = log --pretty=format:'%Cred%h%Creset - %C(green) %an %C(reset) - %C(yellow)%d%Creset %s %Cgreen(%cr) %Creset'
+	da = diff --cached
+	pushnew = "!git push -u origin $(git rev-parse --abbrev-ref HEAD)"
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
