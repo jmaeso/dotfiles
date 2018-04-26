@@ -7,6 +7,11 @@ source ~/.env
 # kubernetes ENV var
 export CLUSTER_ENVIRONMENT=development
 
+# gcloud command line tools
+source ~/google-cloud-sdk/path.bash.inc
+# gcloud command autocompletion
+source ~/google-cloud-sdk/completion.bash.inc
+
 # Golang
 export GOPATH=~/Code/go
 [[ ":$PATH:" =~ ":$GOPATH/bin:" ]] || PATH="$PATH:$GOPATH/bin"

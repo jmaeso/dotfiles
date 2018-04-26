@@ -1,5 +1,5 @@
 [credential]
-	helper = osxkeychain
+	helper = store
 [filter "lfs"]
 	smudge = git-lfs smudge %f
 	required = true

@@ -1,6 +1,6 @@
 {
     //"workbench.colorTheme": "Dracula",
-    "workbench.iconTheme": "vs-seti",
+    "workbench.iconTheme": "vscode-icons",
     "window.zoomLevel": 0,
     "extensions.ignoreRecommendations": false,
     "editor.renderWhitespace": "boundary",
