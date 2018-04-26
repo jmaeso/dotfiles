@@ -64,4 +64,4 @@ function parse_git_dirty {
 	fi
 }
 
-PS1=$PS1"$D_red\`parse_git_branch\`\[$(tput sgr0)\] 👉  "
+PS1=$PS1"$D_red\`parse_git_branch\`\[$(tput sgr0)\] 👉 "
