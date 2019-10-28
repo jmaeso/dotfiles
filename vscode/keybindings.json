@@ -1,12 +1,39 @@
 // Place your key bindings in this file to overwrite the defaults
 [
-    { "key": "cmd+t",         "command": "workbench.action.tasks.runTask", 
-                                 "args": "test" },
-    { "key": "cmd+shift+t",   "command": "go.test.cursor", 
-                                 "when": "editorTextFocus"},
-    { "key": "cmd+r",         "command": "workbench.action.tasks.runTask", 
-                                 "args": "run" },
-    { "key": "cmd+enter",     "command": "workbench.action.terminal.toggleTerminal" },
-    { "key": "cmd+d",  "command": "workbench.action.terminal.split",
-                                 "when": "terminalFocus" },
+    { "key": "cmd+t",           "command": "workbench.action.tasks.runTask", 
+                                    "args": "test" },
+    { "key": "cmd+shift+t",     "command": "go.test.cursor", 
+                                    "when": "editorTextFocus"},
+    { "key": "cmd+r",           "command": "workbench.action.tasks.runTask", 
+                                    "args": "run" },
+    { "key": "cmd+enter",       "command": "workbench.action.terminal.toggleTerminal" },
+    { "key": "cmd+d",           "command": "workbench.action.terminal.split",
+                                    "when": "terminalFocus" },
+    { "key": "ctrl+enter",      "command": "explorer.openToSide",
+                                    "when": "editorTextFocus" },
+    { "key": "ctrl+p",          "command": "csv.preview",
+                                    "when": "editorLangId == 'csv'" },
+    { "key": "ctrl+p",          "command": "markdown.showPreview",
+                                    "when": "editorLangId == 'markdown'" },
+    { "key": "ctrl+p",          "command": "excel.preview",
+                                    "when": "editorLangId == 'excel'"
+                                },
+                                {
+                                    "key": "f8",
+                                    "command": "actions.findWithSelection"
+                                },
+                                {
+                                    "key": "cmd+e",
+                                    "command": "-actions.findWithSelection"
+                                },
+                                {
+                                    "key": "cmd+e",
+                                    "command": "editor.action.marker.nextInFiles",
+                                    "when": "editorFocus && !editorReadonly"
+                                },
+                                {
+                                    "key": "f8",
+                                    "command": "-editor.action.marker.nextInFiles",
+                                    "when": "editorFocus && !editorReadonly"
+                                },
 ]

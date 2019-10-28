@@ -13,7 +13,7 @@
 	co = checkout
 	ci = commit
 	st = status
-	br = branch
+	br = branch --sort=committerdate
 	su = submodule update
 	sl = stash list
 	sp = stash pop
@@ -22,3 +22,8 @@
 	da = diff --cached
 	pushnew = "!git push -u origin $(git rev-parse --abbrev-ref HEAD)"
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[http]
+	cookiefile = /Users/paack/.gitcookies
+[core]
+	excludesfile = ~/.gitignore_global
+

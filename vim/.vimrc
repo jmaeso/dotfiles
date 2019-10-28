@@ -45,14 +45,21 @@ nnoremap <silent> <C-Down> <C-w>j
 nnoremap <silent> <C-Left> <C-w>h
 nnoremap <silent> <C-Right> <C-w>l
 
-"CONFIGS
+"CONFIGS"
+set number
+"NERDTree"
+let NERDTreeShowHidden=1
+map <leader>p :NERDTreeToggle<CR>
+"Open NERDTree if folder"
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+
+"goimports"
+let g:go_fmt_command = "goimports"
 
 " Ctrlp (file opener)
 let g:ctrlp_map = '<leader>o'
 let g:ctrlp_working_path_mode = 'ra'
-
-" NERDTree
-map <leader>p :NERDTreeToggle<CR>
 
 " Auto-close
 let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", '#{': '}'}

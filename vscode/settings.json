@@ -1,9 +1,25 @@
 {
     //"workbench.colorTheme": "Dracula",
-    "workbench.iconTheme": "vscode-icons",
     "window.zoomLevel": 0,
     "extensions.ignoreRecommendations": false,
     "editor.renderWhitespace": "boundary",
     "editor.fontSize": 12,
-    "files.insertFinalNewline": true
+    "files.insertFinalNewline": true,
+    "editor.fontFamily": " Fira Code, 'Monaco for Powerline', Menlo, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "terminal.integrated.rendererType": "dom",
+    "go.useLanguageServer": true,
+    "go.formatTool": "goimports",
+    "[go]": {
+        "editor.snippetSuggestions": "none",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
+    },
+    "gopls": {
+        "usePlaceholders": true // add parameter placeholders when completing a function
+    },
+    "files.eol": "\n",
+    "liveshare.featureSet": "insiders" // formatting only supports LF line endings
 }
