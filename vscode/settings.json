@@ -1,25 +1,54 @@
 {
-    //"workbench.colorTheme": "Dracula",
-    "window.zoomLevel": 0,
-    "extensions.ignoreRecommendations": false,
-    "editor.renderWhitespace": "boundary",
-    "editor.fontSize": 12,
-    "files.insertFinalNewline": true,
-    "editor.fontFamily": " Fira Code, 'Monaco for Powerline', Menlo, 'Courier New', monospace",
-    "editor.fontLigatures": true,
-    "terminal.integrated.rendererType": "dom",
-    "go.useLanguageServer": true,
-    "go.formatTool": "goimports",
-    "[go]": {
-        "editor.snippetSuggestions": "none",
-        "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-            "source.organizeImports": true
-        }
-    },
-    "gopls": {
-        "usePlaceholders": true // add parameter placeholders when completing a function
-    },
-    "files.eol": "\n",
-    "liveshare.featureSet": "insiders" // formatting only supports LF line endings
+  //"workbench.colorTheme": "Dracula",
+  "editor.formatOnSave": true,
+  "window.zoomLevel": 0,
+  "extensions.ignoreRecommendations": false,
+  "editor.renderWhitespace": "boundary",
+  "editor.fontSize": 12,
+  "files.insertFinalNewline": true,
+  "editor.fontFamily": " Fira Code, 'Monaco for Powerline', Menlo, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "terminal.integrated.rendererType": "dom",
+  "go.lintTool": "golangci-lint",
+  "go.lintFlags": [
+    "--build-tags=infra",
+    "--exclude-use-default=false",
+    "-E=golint",
+    "-E=gofmt",
+    "-E=deadcode",
+    "-E=unparam",
+    "-E=gocritic",
+    "-E=lll"
+  ],
+  // "go.buildTags": "infra",
+  "go.formatTool": "gofmt",
+  "go.alternateTools": {
+    "gofmt": "gofumports"
+  },
+  "go.toolsEnvVars": {
+    "GOFLAGS": "-tags=infra" // because of gopls known issue https://github.com/golang/go/issues/29202#issuecomment-515170916
+  },
+  "go.useLanguageServer": true,
+  "go.languageServerExperimentalFeatures": {
+    "format": false
+  },
+  "[go]": {
+    "editor.snippetSuggestions": "none",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "gopls": {
+    "usePlaceholders": true, // add parameter placeholders when completing a function
+    // Experimental settings
+    "completeUnimported": true // autocomplete unimported packages
+  },
+  "files.eol": "\n",
+  "files.autoSave": "afterDelay", // formatting only supports LF line endings
+  "arduino.path": "/Applications",
+  "arduino.additionalUrls": "https://raw.githubusercontent.com/VSChina/azureiotdevkit_tools/master/package_azureboard_index.json",
+  "[terraform]": {
+    "editor.formatOnSave": true
+  },
+  "vsicons.dontShowNewVersionMessage": true
 }
