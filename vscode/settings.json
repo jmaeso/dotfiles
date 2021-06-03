@@ -1,7 +1,6 @@
 {
   //"workbench.colorTheme": "Dracula",
   "editor.formatOnSave": true,
-  "window.zoomLevel": 0,
   "extensions.ignoreRecommendations": false,
   "editor.renderWhitespace": "boundary",
   "editor.fontSize": 12,
