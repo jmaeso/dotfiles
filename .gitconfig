@@ -25,5 +25,7 @@
 [http]
 	cookiefile = ~/.gitcookies
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = /Users/jmaeso/.gitignore_global
 
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/

@@ -42,6 +42,7 @@
     // Experimental settings
     "completeUnimported": true // autocomplete unimported packages
   },
+  "php.executablePath": "/opt/homebrew/bin/php",
   "files.eol": "\n",
   "files.autoSave": "afterDelay", // formatting only supports LF line endings
   "arduino.path": "/Applications",
@@ -49,5 +50,21 @@
   "[terraform]": {
     "editor.formatOnSave": true
   },
-  "vsicons.dontShowNewVersionMessage": true
+  "vsicons.dontShowNewVersionMessage": true,
+  "workbench.colorTheme": "Default Dark+",
+  "go.coverOnSingleTestFile": true,
+  "go.coverOnSingleTest": true,
+  "liveshare.presence": true,
+  "go.toolsManagement.autoUpdate": true,
+  "redhat.telemetry.enabled": false,
+  "explorer.confirmDragAndDrop": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "yaml.format.enable": false,
+  "explorer.confirmDelete": false,
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
 }
